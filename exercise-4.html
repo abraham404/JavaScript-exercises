@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer Abraham</title>
+</head>
+<body>
+    
+    <input type="text" id="enter-measure" placeholder="Enter cm or inch">
+    <button id="cm" onclick="measureConverter('cm')">cm</button>
+    <button id="inch" onclick="measureConverter('inch')">inch</button>
+
+    <div id="measure-result"></div>
+    
+    <script>
+
+        function measureConverter(idButton){
+ 
+            let measure = document.getElementById("enter-measure").value;
+
+            console.log(measure*8);
+
+                if (isNaN(measure)){
+
+                    console.log('hello');
+                    alert('Enter a number please');
+                
+                }else {
+
+                    
+                    if (idButton==="inch"){
+                        
+                        measure = measure * 2.54;  
+                        measure += " cm";
+
+                    }else if(idButton==='cm'){
+                        
+                        measure = measure * 0.3937007874;
+                        measure += " inch";
+                
+                    }
+
+                    document.getElementById("measure-result").innerHTML = measure;
+
+
+                }
+                    
+            
+        }   
+        
+        
+    </script>
+
+</body>
+</html>

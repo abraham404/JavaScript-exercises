@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer Abraham</title>
+</head>
+<body>
+    
+    
+    <button id="apple" onclick="buyCart('apple')">Apple</button>
+    <button id="tomato" onclick="buyCart('tomato')">Tomato</button>
+    <button id="eggs" onclick="buyCart('eggs')" >Eggs</button>
+    <button id="clear" onclick="buyCart('clear')">Clear</button>
+
+    <script>
+        
+        let count = 0;
+
+        function buyCart(idButton){
+            let element = document.createElement('div');
+            element.setAttribute("id", "buys-container");
+            if (idButton==='apple'){
+                element.innerText = 'Apple';
+                document.body.appendChild(element);
+                count++;
+            }
+            else if (idButton==='tomato'){
+                
+                element.innerText = 'Tomato';
+                document.body.appendChild(element);
+                count++;
+
+            }else if (idButton==='eggs'){
+                element.innerText = 'Eggs';
+                document.body.appendChild(element);
+                count++;
+            }else{
+                
+                for(let i = 0; i < count; i++){
+                    
+                    let remove_divs = document.getElementById("buys-container");
+                    remove_divs.parentNode.removeChild(remove_divs);
+                
+                }
+                
+                count = 0;
+            }    
+        }
+    </script>
+
+</body>
+</html>

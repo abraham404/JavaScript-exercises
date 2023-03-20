@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Engineer Abraham</title>
+</head>
+<body>
+    
+    <input type="text" id="enter-frut" placeholder="Enter Frut">
+    <input type="text" id="enter-price" placeholder="Enter Price">
+    <button id="enter" onclick="addFrut()">Enter</button>
+
+    <div id="receipt"></div>
+ 
+    <script>
+
+        const cartArray = ([
+                            {name: 'Apple', price: 4, id: 'id1'},
+                            {name: 'Orange', price: 3, id: 'id2'},
+                            {name: 'Limone', price: 6, id: 'id3'},
+                            {name: 'Banana', price: 12, id: 'id4'}    
+                            ]);
+        
+    
+        let total = 0;
+        let price = 0;
+        let id = '';
+
+        displayReceipt();
+
+        function addFrut(){
+            const textFrut = document.getElementById('enter-frut');
+            const newFrut = textFrut.value;
+
+            const textPrice = document.getElementById('enter-price');
+            const newPrice = textPrice.value;
+
+            const newId = new Date().getTime();
+
+            cartArray.push({
+                name: newFrut,
+                price: parseInt(newPrice),
+                id: newId
+            })
+
+            console.log(cartArray);
+            
+            displayReceipt();
+        }
+
+        function displayReceipt(){
+
+           document.getElementById('receipt').innerHTML = '';
+             
+            cartArray.forEach(function(cart){
+
+                let element = document.createElement('div');
+               // element.setAttribute('id', 'receipt');
+                element.innerHTML = cart.name + ' price $' + cart.price + '.00';  
+
+                //create button
+                const addButton = document.createElement('button');
+                addButton.innerText  = 'Add';
+                element.appendChild(addButton);
+                addButton.style = 'margin: 5px 12px';
+                addButton.onclick = cartBuy;
+                addButton.id = cart.id;
+                let receipt = document.getElementById('receipt');
+                receipt.appendChild(element);
+                
+            });
+        }
+        
+
+        function cartBuy(event){
+            //console.log(event.target.id);
+            let idButton = event.target.id;
+
+            cartArray.forEach(function(cart){
+                if (cart.id == idButton){
+                    total += cart.price;
+                }
+           
+            });
+
+            document.getElementById('container-total').innerHTML = 'Total: $' + total + '.00';
+            console.log(total);
+
+
+        }
+
+        
+    </script>
+    <div id="container-total"></div>
+
+
+</body>
+</html>

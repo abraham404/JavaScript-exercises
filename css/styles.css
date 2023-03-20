@@ -1,0 +1,23 @@
+html{
+    font-family: Arial;
+}
+
+button{
+    background-color: rgb(134, 134, 233);
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
+}
+
+#enter-frut, #enter-price{
+    width: 80px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#container-total{
+    margin-top: 15px;
+}

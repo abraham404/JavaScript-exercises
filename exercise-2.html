@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer Abraham</title>
+</head>
+<body>
+    <script>
+        let strs  =  ['Hello', 'Abraham', 'information', 'mathematics','physic']
+        strs.push('chemistry');
+
+        strs.forEach((str, index, array) => {
+            if(index===0){
+                console.log(array.map(str => str.toUpperCase()));
+            }
+        });
+
+        arrayDoble = ['Jorge', 'Abraham'];
+
+        arrayDoble.forEach((str, index, array) => {
+            
+                console.log('['+str+', '+str+']');
+               
+        });
+
+        let array = [100, 100, 100, 100];
+        let sum = 0;
+        
+        function sumArray(array){
+            array.forEach(item => {
+                sum += item;
+            });
+
+            console.log(sum);
+
+            return sum;
+        }
+
+        sumArray(array);
+
+      </script>
+      
+
+
+</body>
+</html>

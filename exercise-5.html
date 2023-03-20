@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Engineer Abraham</title>
+</head>
+<body>
+    <button  onclick="displayReceipt()">Show Price</button>
+
+ 
+    <script>
+
+        const cartArray = ([
+                            {name: 'Apple', price: 4, quantity: 2},
+                            {name: 'Orange', price: 3, quantity: 3},
+                            {name: 'Limone', price: 4, quantity: 3}    
+                            ]);
+        
+        
+
+        function displayReceipt(){
+            let total = 0;
+            let price = 0;  
+            
+            cartArray.forEach(function(cart){
+
+                let element = document.createElement('div');
+                element.setAttribute('id', 'receipt');
+                
+                price = cart.price * cart.quantity;
+                total += cart.price * cart.quantity;
+                element.innerHTML = cart.name + ' $' + cart.price +' * '+cart.quantity + ' = $' + price;
+                document.body.appendChild(element);
+                
+            });
+            console.log(total);
+            document.getElementById('container-total').innerHTML =  'Cart Total: ' + total;
+        }
+
+        
+        /*
+        function cartTotal(){
+            let total = 0;
+            cartArray.forEach(function(cart){
+                
+                total += cart.price * cart.quantity;
+
+            });
+            console.log(cartArray);
+
+            console.log(total);
+        } 
+
+        console.log(cartTotal());
+        */
+        
+    </script>
+    <div id="container-total"></div>
+
+
+</body>
+</html>
