@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Engineer Abraham</title>
+</head>
+<body>
+    
+    <script>
+        
+    const foodArray = ([{name: 'Apple', color: 'Red'},
+                    {name: 'Egg', color: 'White' },
+                    {name: 'Coco', color: 'White' },
+                    {name: 'Granada', color: 'Red' },])        
+
+    function removeRed(){
+       const array = foodArray.filter(color => color.color != 'White');
+       console.log(array);
+    }
+
+    removeRed();
+    </script>
+</body>
+</html>

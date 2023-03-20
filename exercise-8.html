@@ -10,15 +10,20 @@
 <body>
     
     <script>
-       const fruts = ['cherry', 'apple', 'orange', 'apple', 'banana', 'apple'];
+        const tempsCelsius = [4, 20, -23, 45, 0, 69, -78, 0, -10, 4, 63, 74];
         
-       //remove duplicates
-       function pickApples(fruts){
-            return fruts.filter((item, index) => fruts.indexOf(item) === index);
-       }
+        console.log(tempsCelsius);  
 
-       console.log(pickApples(fruts));
+        function aboveFreezin(){
+            
+            const temps = tempsCelsius.filter(temp => temp > 0);
 
+            console.log('Temps > 0');
+            console.log(temps);
+
+        }
+
+        aboveFreezin();
     </script>
 </body>
 </html>
